@@ -6,7 +6,6 @@ package TaskManager;
  */
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -34,11 +33,11 @@ public class TaskManagerImpl implements TaskManager{
         return (id >= getSize()) ? null : taskImplList.get(id);
     }
 
-    public ArrayList getList(){
-        return (taskImplList.size() == 0) ? null : taskImplList;
+    public ArrayList getTaskList(){
+        return taskImplList;
     }
 
-    public void setStatus(int id, String status){
+    public void updateStatus(int id, String status){
         taskImplList.get(id-1).setStatus(status);
     }
 
@@ -46,7 +45,7 @@ public class TaskManagerImpl implements TaskManager{
         taskImplList.remove(id-1);
     }
 
-    public void editTask(int id, String name){
+    public void updateName(int id, String name){
         taskImplList.get(id-1).setName(name);
     }
 

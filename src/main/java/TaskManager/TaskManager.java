@@ -4,11 +4,11 @@ import java.util.List;
 
 public interface TaskManager {
     int getSize();
-    List getList();
+    List getTaskList();
     Task getTask(int id);
     void addTask(String name);
-    void editTask(int id, String name);
-    void setStatus(int id, String status);
+    void updateName(int id, String name);
+    void updateStatus(int id, String status);
     void deleteTask(int id);
 
 }

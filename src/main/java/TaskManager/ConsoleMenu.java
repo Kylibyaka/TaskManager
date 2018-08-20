@@ -6,7 +6,6 @@ package TaskManager;
  */
 
 import java.util.Scanner;
-import java.io.*;
 
 /**
  *
@@ -73,11 +72,11 @@ public class ConsoleMenu {
         System.out.println("Введите имя задачи: ");
         taskName = forString.nextLine();
         tm.addTask(taskName);
-        tm.getList();
+        tm.getTaskList();
     }
 
     void show(){
-        tm.getList();
+        tm.getTaskList();
         if (tm.getSize() != 0) {
             System.out.println("------------------------------------");
             for (int i = 0; i < tm.getSize(); i++) {
@@ -112,7 +111,7 @@ public class ConsoleMenu {
             if (tm.getTask(id-1) != null) {
                 System.out.println("Введите новое имя задачи: ");
                 taskName = forString.nextLine();
-                tm.editTask(id, taskName);
+                tm.updateName(id, taskName);
             }
             else
                 System.out.println("Неправильный номер");
@@ -145,7 +144,7 @@ public class ConsoleMenu {
                         st = Task.status.open;
                         break;
                 }
-                tm.setStatus(id, st.toString());
+                tm.updateStatus(id, st.toString());
             }
             else
                 System.out.println("Неправильный номер.");
