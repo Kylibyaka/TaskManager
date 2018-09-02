@@ -14,26 +14,29 @@ public class TaskImpl implements Task{
 
     private int id;
     private String name;
-    private status status;
+    private Status status;
 
     public TaskImpl(int id, String name){
         this.id = id;
         this.name = name;
-        this.status = Task.status.open;
+        this.status = Task.Status.OPEN;
     }
 
+    @Override
     public String getName(){
         return this.name;
     }
 
-    public status getStatus(){
+    @Override
+    public Status getStatus(){
         return status;
     }
 
+    @Override
     public int getId(){ return this.id; }
 
     void setStatus(String s){
-        this.status = Task.status.valueOf(s);
+        this.status = Task.Status.valueOf(s);
     }
 
     void setName(String name){

@@ -19,32 +19,39 @@ public class TaskManagerImpl implements TaskManager{
         taskImplList = new ArrayList<>();
     }
 
+    @Override
     public void addTask(String name){
         int id = taskImplList.size() - 1;
         TaskImpl ts = new TaskImpl(id, name);
         taskImplList.add(ts);
     }
 
+    @Override
     public int getSize(){
         return taskImplList.size();
     }
 
+    @Override
     public TaskImpl getTask(int id){
         return (id >= getSize()) ? null : taskImplList.get(id);
     }
 
+    @Override
     public ArrayList getTaskList(){
         return taskImplList;
     }
 
+    @Override
     public void updateStatus(int id, String status){
         taskImplList.get(id-1).setStatus(status);
     }
 
+    @Override
     public void deleteTask(int id){
         taskImplList.remove(id-1);
     }
 
+    @Override
     public void updateName(int id, String name){
         taskImplList.get(id-1).setName(name);
     }

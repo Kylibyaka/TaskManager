@@ -72,11 +72,11 @@ public class ConsoleMenu {
         System.out.println("Введите имя задачи: ");
         taskName = forString.nextLine();
         tm.addTask(taskName);
-        tm.getTaskList();
+
     }
 
     void show(){
-        tm.getTaskList();
+
         if (tm.getSize() != 0) {
             System.out.println("------------------------------------");
             for (int i = 0; i < tm.getSize(); i++) {
@@ -129,19 +129,19 @@ public class ConsoleMenu {
             if(tm.getTask(id-1) != null) {
                 System.out.println("Выберите новый статус для задачи: \n 1.Открыта \n 2.В процессе \n 3.Закрыта");
                 int k = forInt.nextInt();
-                Task.status st;
+                Task.Status st;
                 switch (k) {
                     case 1:
-                        st = Task.status.open;
+                        st = Task.Status.OPEN;
                         break;
                     case 2:
-                        st = Task.status.during;
+                        st = Task.Status.DURING;
                         break;
                     case 3:
-                        st = Task.status.closed;
+                        st = Task.Status.CLOSED;
                         break;
                     default:
-                        st = Task.status.open;
+                        st = Task.Status.OPEN;
                         break;
                 }
                 tm.updateStatus(id, st.toString());

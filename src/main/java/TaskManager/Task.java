@@ -1,9 +1,9 @@
 package TaskManager;
 
 public interface Task {
-    enum  status {open, during, closed};
+    enum  Status {OPEN, DURING, CLOSED};
     int getId();
     String getName();
-    status  getStatus();
+    Status  getStatus();
 
 }
